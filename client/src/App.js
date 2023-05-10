@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import Clients from './components/Clients';
 import ClientForm from './components/ClientForm';
@@ -14,14 +14,10 @@ const App = () => {
           <Button color="inherit" component={Link} to="/client">Add/Edit Client</Button>
         </Toolbar>
       </AppBar>
-      <Switch>
-        <Route exact path="/">
-          <Clients />
-        </Route>
-        <Route path="/client">
-          <ClientForm />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Clients />} />
+        <Route path="/client" element={<ClientForm />} />
+      </Routes>
     </Router>
   );
 };

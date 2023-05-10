@@ -13,6 +13,7 @@ app.use((req, res, next) => {
 const db = require('./config/config.json')[process.env.NODE_ENV || 'development'];
 
 // Cria uma nova instância do Sequelize com as configurações do banco de dados
+const Sequelize = require('sequelize');
 const sequelize = new Sequelize(db.database, db.username, db.password, db);
 
 // Função assíncrona que tenta autenticar a conexão com o banco de dados
@@ -37,7 +38,7 @@ app.use((err, req, res, next) => {
   res.status(500).send('Internal Server Error');
 });
 
-// Inicia o servidor na porta 3000
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+// Inicia o servidor na porta 3001
+app.listen(3001, () => {
+  console.log('Server listening on port 3001');
 });

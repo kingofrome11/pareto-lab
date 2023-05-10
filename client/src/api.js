@@ -2,7 +2,11 @@
 import axios from 'axios';
 
 // Define a URL base da API
-const API_URL = 'http://localhost:3000';
+const API_URL = 'http://localhost:3001/api';
+
+const api = axios.create({
+  baseURL: API_URL
+});
 
 // Função para buscar todos os clientes
 export const fetchClients = async () => {
