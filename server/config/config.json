@@ -1,0 +1,10 @@
+{
+    "development": {
+      "username": "vitorsantos",
+      "password": "",
+      "database": "pareto-lab",
+      "host": "localhost",
+      "dialect": "postgres"
+    }
+  }
+  
